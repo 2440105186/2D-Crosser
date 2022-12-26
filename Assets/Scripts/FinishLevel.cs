@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
-    private bool levelCompleted = false;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            levelCompleted = true;
+            FindObjectOfType<GameManager>().FinishGame();
         }
+            Debug.Log("Finish!");
     }
 
 }

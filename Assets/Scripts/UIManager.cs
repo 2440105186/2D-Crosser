@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
 
     public void ChangeBar(int myBarType)

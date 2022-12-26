@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public float CurrentBudget = 0;
     public UIManager myUIManager;
 
+    public GameObject creationUI;
+    public GameObject levelCompletedPanel;
+
     public static Dictionary<Vector2, Point> AllPoints = new Dictionary<Vector2, Point>();
 
     private void Awake()
@@ -30,4 +33,9 @@ public class GameManager : MonoBehaviour
         myUIManager.UpdateBudgetUI(CurrentBudget, LevelBudget);
     }
 
+    public void FinishGame()
+    {
+        creationUI.SetActive(false);
+        levelCompletedPanel.SetActive(true);
+    }
 }
